@@ -50,7 +50,7 @@ int* array_insert(int* arr, std::size_t& size, std::size_t pos, int value) {
         data[i + 1] = arr[i];
     }
 
-    delete[] arr;
+    array_delete(arr);
     ++size;
     
     return data;
@@ -77,7 +77,7 @@ int* array_remove(int* arr, std::size_t& size, std::size_t pos) {
         data[i - 1] = arr[i];
     }
 
-    delete[] arr;
+    array_delete(arr);
     --size;
 
     return data;

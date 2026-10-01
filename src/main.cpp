@@ -15,7 +15,7 @@ void print_menu() {
         << " [4] Remove\n"
         << " [5] Resize\n"
         << " [6] Save\n"
-        << " [7] Merge\n"
+        << " [7] Merge sorted arrays\n"
         << " [0] Exit\n"
         << "----------------------\n";
 }
@@ -92,10 +92,13 @@ int main() {
                 break;
             }
             case 5: {
-                int new_size = read_int("Enter new size: ");
+                int new_size_tmp = read_int("Enter new size: ");
 
-                if (new_size >= 0) {
-                    arr = array_resize(arr, size, static_cast<std::size_t>(new_size));
+                if (new_size_tmp >= 0) {
+                    std::size_t new_size = static_cast<std::size_t>(new_size_tmp);
+                    arr = array_resize(arr, size, new_size);
+                    size = new_size;
+                    
                     std::cout << "Array resized\n";
                 } else {
                     std::cout << "Wrong new size\n";
