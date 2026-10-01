@@ -1,8 +1,6 @@
 #include <cstddef>
 #include <iostream>
 
-namespace array {
-
 int* array_create(std::size_t size) {
     if (size == 0) {
         return nullptr;
@@ -98,7 +96,7 @@ void array_print(const int* arr, std::size_t size) {
         }
     }
 
-    std::cout << "]" << std::endl;
+    std::cout << "]\n";
 }
 
 int* array_merge(
@@ -135,5 +133,3 @@ int* array_merge(
 
     return arr;
 }
-
-} // namespace array
